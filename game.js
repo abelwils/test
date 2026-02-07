@@ -42,9 +42,10 @@ const levels = [
     { text: "Even on quiet days… I choose you.", type: "memory", platforms: [{x:0, y:380, w:800, h:20}], duration: 250 },
     { text: "Sometimes things feel out of reach...", type: "collect", platforms: [{x:0, y:380, w:180, h:20}, {x:240, y:300, w:120, h:20}, {x:420, y:350, w:120, h:20}, {x:600, y:240, w:200, h:20}], hearts: [{x:280, y:240}, {x:680, y:180}] },
     { text: "But you never give up, and I admire that.", type: "platform", platforms: [{x:0, y:380, w:150, h:20}, {x:250, y:310, w:120, h:20}, {x:450, y:240, w:120, h:20}, {x:650, y:180, w:150, h:20}], hearts: [] },
-    { text: "Collect ini, ini milik kita.", type: "collect", platforms: [{x:0, y:380, w:200, h:20}, {x:300, y:240, w:200, h:20}, {x:600, y:380, w:200, h:20}], hearts: [{x:380, y:180}, {x:100, y:320}, {x:700, y:320}] },
-    // Level 8 FIX: Adjusted middle platform from 380 to 320 to make it reachable
-    { text: "Sabar adalah nama lain dari cinta.", type: "timing", platforms: [{x:0, y:380, w:200, h:20}, {x:300, y:320, w:200, h:20}, {x:600, y:380, w:200, h:20}], hearts: [] },
+    // ADJUSTED LEVEL 7: Lowered middle platform
+    { text: "Collect ini, ini milik kita.💖", type: "collect", platforms: [{x:0, y:380, w:200, h:20}, {x:300, y:280, w:200, h:20}, {x:600, y:380, w:200, h:20}], hearts: [{x:380, y:220}, {x:100, y:320}, {x:700, y:320}] },
+    // ADJUSTED LEVEL 8: Lowered middle platform
+    { text: "Sabar adalah nama lain dari cinta.💕", type: "timing", platforms: [{x:0, y:380, w:200, h:20}, {x:300, y:310, w:200, h:20}, {x:600, y:380, w:200, h:20}], hearts: [] },
     { text: "Aku akan selalu menunggumu.", type: "memory", platforms: [{x:0, y:380, w:800, h:20}], duration: 200 },
     { text: "Hampir sampai, sayangku...", type: "platform", platforms: [{x:0, y:380, w:250, h:20}, {x:350, y:300, w:150, h:20}, {x:600, y:380, w:200, h:20}], hearts: [] },
     { text: "Setiap langkahmu... adalah untuk kita.", type: "walk", platforms: [{x:0, y:380, w:800, h:20}], hearts: [] },
@@ -85,7 +86,14 @@ function playEndSequence() {
             Terima kasih telah menjadi alasan di balik setiap senyumku.<br><br>
             Aku berjanji akan menjagamu dan mencintaimu selamanya.<br>
             Sampai nafas terakhir, hanya kamu di hatiku.<br><br>
-            Selamat Hari Valentine, Sayangku. ❤️
+            Kamu adalah duniaku, cahayaku, dan masa depanku.<br>
+            Jangan pernah ragu, karena hatiku hanya milikmu.<br><br>
+            Tanpamu, duniaku akan terasa hampa.<br>
+            Bersamamu, setiap rintangan terasa ringan.<br>
+            Aku ingin menghabiskan sisa hidupku hanya denganmu.<br><br>
+            Selamat Hari Valentine, Sayangku. ❤️<br>
+            Aku mencintaimu sangat, sangat banyak.<br><br>
+            Selamanya Milikmu.
         </div>
     `;
 }
@@ -167,8 +175,10 @@ function draw() {
     ctx.fillStyle = "rgba(255, 192, 203, 0.75)";
     lvl.platforms.forEach(p => ctx.fillRect(p.x, p.y, p.w, p.h));
     if (lvl.hearts) lvl.hearts.forEach(h => ctx.drawImage(images.heart, h.x, h.y, 35, 35));
+    
     let img = (player.facing === 'back' || player.facing === 'walk') ? ((Math.floor(frameCount / 12) % 2 === 0) ? images.walk1 : images.walk2) : images.front;
     ctx.drawImage(img, player.x, player.y, player.w, player.h);
+
     if (male.active) {
         let mImg = (cinematicStage === 0 || cinematicStage === 2) ? ((Math.floor(frameCount / 12) % 2 === 0) ? images.male_left : images.male_idle) : images.male_looking_left;
         ctx.drawImage(mImg, male.x, male.y, male.w, male.h);
