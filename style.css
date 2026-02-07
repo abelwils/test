@@ -30,6 +30,42 @@ canvas {
     display: block;
 }
 
+/* COMFORTABLE MOBILE CONTROLS */
+#mobile-controls {
+    position: absolute;
+    bottom: 12%; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    padding: 0 40px;
+    box-sizing: border-box;
+    z-index: 10;
+    pointer-events: none; 
+}
+
+#mobile-controls button {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    color: white;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: bold;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.move-group { display: flex; gap: 20px; }
+
+#mobile-controls button:active {
+    background: rgba(255, 77, 109, 0.7);
+    transform: scale(0.9);
+}
+
 #ui-layer {
     position: absolute;
     top: 10%;
@@ -38,11 +74,6 @@ canvas {
     color: white;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
     pointer-events: none;
-}
-
-#level-text {
-    font-size: clamp(1rem, 4vw, 1.4rem);
-    padding: 0 10px;
 }
 
 #start-screen, #credits-layer {
@@ -58,21 +89,18 @@ canvas {
     text-align: center;
 }
 
-#credits-layer {
-    display: none;
-    z-index: 200;
-}
+#credits-layer { display: none; z-index: 200; overflow: hidden; }
 
 .credit-content {
     font-size: 1.2rem;
     line-height: 2.2;
-    padding: 20px;
-    animation: scrollCredits 25s linear forwards;
+    padding: 30px;
+    animation: scrollCredits 28s linear forwards;
 }
 
 @keyframes scrollCredits {
     from { transform: translateY(100%); }
-    to { transform: translateY(-150%); }
+    to { transform: translateY(-160%); }
 }
 
 #start-btn {
@@ -85,33 +113,5 @@ canvas {
     cursor: pointer;
     box-shadow: 0 0 15px #ff4d6d;
 }
-
-#mobile-controls {
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 25px;
-    box-sizing: border-box;
-    z-index: 10;
-}
-
-.move-group { display: flex; gap: 15px; }
-
-#mobile-controls button {
-    background: rgba(255, 255, 255, 0.25);
-    border: 2px solid white;
-    color: white;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    user-select: none;
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
-}
-
-#mobile-controls button:active { background: rgba(255, 77, 109, 0.6); }
 
 @media (min-width: 1024px) { #mobile-controls { display: none; } }
