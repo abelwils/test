@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For You, Always</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="start-screen">
+            <div class="start-card">
+                <h2>For You, Always</h2>
+                <p>Sebuah perjalanan cinta dan kesabaran.</p>
+                <button id="start-btn">Mulai Perjalanan ❤️</button>
+            </div>
+        </div>
+
+        <div id="ui-layer">
+            <h1 id="level-text"></h1>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="credits-layer"></div>
+
+        <div id="mobile-controls">
+            <div class="move-group">
+                <button id="leftBtn">←</button>
+                <button id="rightBtn">→</button>
+            </div>
+            <button id="jumpBtn">Jump</button>
+        </div>
+    </div>
+    
+    <audio id="bgMusic" loop src="assets/music.mp3"></audio>
+    <audio id="finalMusic" src="assets/wedding.mp3"></audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
