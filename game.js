@@ -42,10 +42,9 @@ const levels = [
     { text: "Even on quiet days… I choose you.", type: "memory", platforms: [{x:0, y:380, w:800, h:20}], duration: 250 },
     { text: "Sometimes things feel out of reach...", type: "collect", platforms: [{x:0, y:380, w:180, h:20}, {x:240, y:300, w:120, h:20}, {x:420, y:350, w:120, h:20}, {x:600, y:240, w:200, h:20}], hearts: [{x:280, y:240}, {x:680, y:180}] },
     { text: "But you never give up, and I admire that.", type: "platform", platforms: [{x:0, y:380, w:150, h:20}, {x:250, y:310, w:120, h:20}, {x:450, y:240, w:120, h:20}, {x:650, y:180, w:150, h:20}], hearts: [] },
-    // ADJUSTED LEVEL 7: Lowered middle platform
-    { text: "Collect ini, ini milik kita.💖", type: "collect", platforms: [{x:0, y:380, w:200, h:20}, {x:300, y:280, w:200, h:20}, {x:600, y:380, w:200, h:20}], hearts: [{x:380, y:220}, {x:100, y:320}, {x:700, y:320}] },
-    // ADJUSTED LEVEL 8: Lowered middle platform
-    { text: "Sabar adalah nama lain dari cinta.💕", type: "timing", platforms: [{x:0, y:380, w:200, h:20}, {x:300, y:310, w:200, h:20}, {x:600, y:380, w:200, h:20}], hearts: [] },
+    { text: "Collect ini, ini milik kita.", type: "collect", platforms: [{x:0, y:380, w:200, h:20}, {x:300, y:280, w:200, h:20}, {x:600, y:380, w:200, h:20}], hearts: [{x:380, y:220}, {x:100, y:320}, {x:700, y:320}] },
+    // Level 8 FIX: Easier jump height
+    { text: "Sabar adalah nama lain dari cinta.", type: "timing", platforms: [{x:0, y:380, w:220, h:20}, {x:320, y:310, w:160, h:20}, {x:580, y:380, w:220, h:20}], hearts: [] },
     { text: "Aku akan selalu menunggumu.", type: "memory", platforms: [{x:0, y:380, w:800, h:20}], duration: 200 },
     { text: "Hampir sampai, sayangku...", type: "platform", platforms: [{x:0, y:380, w:250, h:20}, {x:350, y:300, w:150, h:20}, {x:600, y:380, w:200, h:20}], hearts: [] },
     { text: "Setiap langkahmu... adalah untuk kita.", type: "walk", platforms: [{x:0, y:380, w:800, h:20}], hearts: [] },
